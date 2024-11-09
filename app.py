@@ -10,6 +10,7 @@ import tempfile
 from flask_session import Session  # Import Flask-Session for server-side sessions
 import matplotlib.pyplot as plt  # Import for plotting graphs
 import matplotlib
+from werkzeug.urls import url_quote
 matplotlib.use('Agg')
 
 app = Flask(__name__)
