@@ -9,6 +9,8 @@ from io import BytesIO
 import tempfile
 from flask_session import Session  # Import Flask-Session for server-side sessions
 import matplotlib.pyplot as plt  # Import for plotting graphs
+import matplotlib
+matplotlib.use('Agg')
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
