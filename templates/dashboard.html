@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Navigation Bar -->
+        <div class="navigation">
+            <h3>Sentiment Dashboard</h3>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><a href="/report">Report</a></li>
+                <li><a href="/chat">Chat</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="dashboard-content">
+            <!-- Sentiment Boxes (Positive, Neutral, Negative) -->
+            <div class="sentiment-boxes">
+                <!-- Positive Reviews Box -->
+                <div class="sentiment-box positive">
+                    <h3>Positive Reviews</h3>
+                    <div class="reviews-list">
+                        {% for review in positive_reviews %}
+                        <div class="review-box">
+                            <p><strong>User ID:</strong> {{ review['UserId'] }}</p>
+                            <p><strong>Review:</strong> {{ review['Summary'] }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Negative Reviews Box -->
+                <div class="sentiment-box negative">
+                    <h3>Negative Reviews</h3>
+                    <div class="reviews-list">
+                        {% for review in negative_reviews %}
+                        <div class="review-box">
+                            <p><strong>User ID:</strong> {{ review['UserId'] }}</p>
+                            <p><strong>Review:</strong> {{ review['Summary'] }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Neutral Reviews Box -->
+                <div class="sentiment-box neutral">
+                    <h3>Neutral Reviews</h3>
+                    <div class="reviews-list">
+                        {% for review in neutral_reviews %}
+                        <div class="review-box">
+                            <p><strong>User ID:</strong> {{ review['UserId'] }}</p>
+                            <p><strong>Review:</strong> {{ review['Summary'] }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graph Section (below review boxes) -->
+            <div class="visualization">
+                <!-- Pie Chart -->
+                <div class="chart">
+                    <h4>Sentiment Distribution</h4>
+                    <img src="data:image/png;base64,{{ pie_chart }}" alt="Sentiment Pie Chart">
+                </div>
+
+                <!-- Bar Chart -->
+                <div class="chart">
+                    <h4>Product Sentiment Distribution</h4>
+                    <img src="data:image/png;base64,{{ bar_chart }}" alt="Sentiment Bar Chart">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

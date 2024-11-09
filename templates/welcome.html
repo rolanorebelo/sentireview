@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Welcome</title>
+    <style>
+        /* Add this CSS to style the footer */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 12px;
+            color: #777; /* Adjust the color as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Welcome to the User Review Analysis App</h1>
+        <a href="{{ url_for('sign_up') }}">
+            <button>Let's Leverage the Sales</button>
+        </a>
+    </div>
+
+    <footer>
+        &copy; 2024 SentiReview Team. All rights reserved.
+    </footer>
+</body>
+</html>
