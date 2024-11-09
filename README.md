@@ -1,2 +1,1 @@
-# sentireview
-sentiment anlyzer
+# SentiReview

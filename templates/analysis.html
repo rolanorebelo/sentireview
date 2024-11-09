@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Detailed Analysis</h2>
+        <div>
+            <h3>Overall Sentiment Analysis</h3>
+            <img src="data:image/png;base64,{{ sentiment_chart }}" alt="Overall Sentiment Analysis Chart">
+        </div>
+        <div>
+            <h3>Product Sentiment Distribution</h3>
+            <img src="data:image/png;base64,{{ product_chart }}" alt="Product Sentiment Distribution Chart">
+        </div>
+    </div>
+</body>
+</html>
